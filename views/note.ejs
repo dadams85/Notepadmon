@@ -5,13 +5,18 @@
   <body>
     <% include ./partials/header %>
     <a href="/notes">Back</a>
-    <h1 class="center">Title:<%= note.title %></h1>
-    <h1 class="center">Description:<%= note.description %></h1>
+    <h1 class="center"><%= note.title %></h1>
+    <h5 class="center"><%= note.description %></h5>
     <hr />
-    <% var action = '/notes/edit/' + note.id %>
+    <% var action = 'edit/' + note.id %>
+    <p>Edit the note down here</p>
     <form action =<%= action %> method="POST">
-      <input name="title" value=<%= note.title %> />
-      <input name="description" values=<%= note.description %> />
+      <input
+        name="title"
+        value ="<%= note.title %>" />
+      <input
+        name="description"
+        value ="<%= note.description %>" />
       <button class="btn">Update</button>
     </form>
   </body>
