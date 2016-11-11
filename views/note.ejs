@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <% include ./partials/header %>
+    <a href="/notes">Back</a>
+    <h1 class="center"><%= note.title %></h1>
+    <hr />
+    <% var action = '/notes/edit/' + note.id %>
+    <form action =<%= action %> method="POST">
+      <input name="title" value=<%= note.title %> />
+      <input name="description" values=<%= note.description %> />
+      <button class="btn">Update</button>
+    </form>
+  </body>
+</html>
